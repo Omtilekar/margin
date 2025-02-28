@@ -71,7 +71,7 @@ def streamlit_ui():
     bottom_margin = st.number_input("Bottom Margin (pixels)", min_value=0, value=50)
 
     if uploaded_file is not None:
-        if st.button("Convert and Download PDF"):
+        if st.button("Covert"):
             files = {"file": (uploaded_file.name, uploaded_file, "application/pdf")}
             response = requests.post(f"http://127.0.0.1:8000/pdf_to_pdf_with_margin/?left={left_margin}&right={right_margin}&top={top_margin}&bottom={bottom_margin}", files=files)
             if response.status_code == 200:
